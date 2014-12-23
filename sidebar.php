@@ -11,7 +11,7 @@
 ?>
 
 <!-- Sidebar -->
-<aside class="large-3 columns sidebar">
+<aside class="large-3 columns black-case sidebar border-radius box-shadow">
 
 <?php if ( dynamic_sidebar('Sidebar Right') ) : elseif( current_user_can( 'edit_theme_options' ) ) : ?>
 

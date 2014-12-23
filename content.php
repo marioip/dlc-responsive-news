@@ -10,7 +10,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="black-case" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header>
 		<hgroup>

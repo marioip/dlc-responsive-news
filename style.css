@@ -3,6 +3,11 @@ Theme Name: Foundation, for WordPress
 Theme URI: http://fwp.drewsymo.com
 Author: Drew Morris
 Author URI: http://drewsymo.com
+
+Author adaptation: Mario Iglesias - @marioip;
+Author adaptation URI: http://www.marioiglesias.com;
+
+
 Version: 4.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,17 +18,64 @@ Tags: two-columns
 
 /* Artfully masterminded by ZURB  */
 
+@import url(http://fonts.googleapis.com/css?family=Lora);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
 /* -------------------------------------------------- 
    Table of Contents
 -----------------------------------------------------
+
+:: General styles
 :: Images
 :: Posts
 :: Typography
 :: Header
 :: Shared Styles
-:: Page Name 1
-:: Page Name 2
+:: Sidebar
+:: Main Page
+:: Single Page
+:: Hide Wordpress Options
+:: Share Modal
+:: Footer Style
 */
+
+/* -----------------------------------------
+   General Styles
+----------------------------------------- */
+
+.black-case{
+  background-color: #070707;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.black-case article{
+  margin: 0 15px;
+}
+
+header h3, header h2{
+  padding: 5px 0 15px 0;
+  font-size: 1.4em;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.button{
+  background-color: #252525;
+  border: 1px solid #333;
+}
+
+.border-radius{
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.box-shadow{
+  -moz-box-shadow: 5px 7px 15px #050505;
+  -webkit-box-shadow: 5px 7px 15px #050505;
+  box-shadow: 5px 7px 15px #050505;
+}
 
 /* -----------------------------------------
    Images
@@ -41,7 +93,9 @@ img.size-full {
     width: auto; /* Prevent stretching of full-size images with height and >>width attributes in IE8 */
 }
 
-.wp-caption { max-width: 100%; }
+.wp-caption { 
+  max-width: 100%;
+}
 
 /* -----------------------------------------
    Posts
@@ -61,23 +115,102 @@ article .th {margin-bottom:10px; margin-bottom:1em;}
    Typography
 ----------------------------------------- */
 
-body,h1,h2,h3,h4,h5,h6,p {font-family: 'Open Sans', sans-serif;}
-h1,h2,h3,h4,h5,h6,a:link {font-weight:300;}
 
-.site-title .subheader {margin-bottom:0;}
+body,h1,h2,h3,h4,h5,h6,p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95em;
+  color: #dedede;
+}
+h1,h2,h3,h4,h5,h6,a:link {
+  font-weight:300;
+}
+a{
+  color: #ccc;
+}
+a:hover{
+  color: #fff;
+}
+
+.site-title .subheader {
+  color: #fff;
+  margin-bottom:0;
+}
 
 /* -----------------------------------------
    Header
 ----------------------------------------- */
 
-.site-header {border-bottom:1px solid #ddd;padding:1.5rem 0 1rem 0;margin:-1.875em 0 1.875em 0;}
-.sidebar ul li {list-style:none;}
-.top-bar-section ul li>a {border-left:1px solid #333;border-right:none;}
+#logo{
+  text-align: left;
+}
+
+#logo h2{
+  font-family: 'Lora', serif;
+  text-align: right;
+  margin-right: 50px;
+  font-size: 2em;
+  color: #dedede;
+  font-style: italic;
+  letter-spacing: 0.1em;
+}
+
+#content-head{
+  margin-bottom: 50px;
+  background: url('img/fondo-head.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: #000;
+}
+
+#menu-head a img{
+  margin-top: 30px;
+}
+
+.news-text h2{
+  font-size: 1.7em;
+  text-align: right;
+  margin-right: 50px;
+}
+
+.active{
+  background-color: #000;
+}
+
+#social-icon{
+  float: right;
+}
+
+.dropdown li label{
+    border-bottom: 1px solid #333;
+}
+
+/* menu */
+
+.top-bar{
+  padding-left: 20px;
+  padding-right: 5px;
+  background-color: #000;
+  border-bottom: 1px solid #333;
+}
+
+.top-bar-section li a:not(.button){
+  background-color: #000;
+  border-bottom: 1px solid #333;
+}
+
+hr{
+  border: 1px solid #111;
+}
 
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
-.wp-caption-text {text-align: center;}
+
+.wp-caption-text {
+  text-align: center;
+  font-size: 0.7em;
+  color: #999;
+}
 .sticky { }
 .gallery-caption { }
 .bypostauthor{ }
@@ -104,10 +237,167 @@ iframe,
 object {
   max-width: 100%;
 }
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
 
 /* -----------------------------------------
-   Page Name 2
+   Sidebar
 ----------------------------------------- */
+
+#searchform input[type="text"]{
+  color: #dedede;
+  background-color: #111;
+}
+
+#searchform input[type="submit"]:hover{
+  background-color: #333;
+}
+
+.site-header {border-bottom:1px solid #333;padding:1.5rem 0 0 0;margin:-1.875em 0 0 0;}
+.sidebar ul li {
+  font-size: 0.9em;
+  list-style:none;
+  margin-bottom: 10px;
+}
+
+h5{
+  font-size: 1.2em;
+  border-bottom: 1px solid #666;
+  font-weight: bold;
+}
+
+.sidebar{
+  margin-right: -15px;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+/* -----------------------------------------
+   Main Page
+----------------------------------------- */
+
+.post h2{
+  margin: 15px 0 20px 0;
+}
+
+/* -----------------------------------------
+   Single Page
+----------------------------------------- */
+
+.single{
+  margin-left: -15px;
+}
+
+article h6{
+  margin-bottom: 15px;
+}
+
+/* -----------------------------------------
+   Form Styles
+----------------------------------------- */
+
+input, input[type="text"]{
+  background-color: #151515;
+  border: 1px solid #333;
+  color: #dedede;
+}
+
+/* -----------------------------------------
+   Hide Wordpress Options
+----------------------------------------- */
+
+.entry-author {
+   display: none;
+}
+
+/* -----------------------------------------
+   Share Modal
+----------------------------------------- */
+
+#share-modal{
+  background-color: #111;
+  border: 1px solid #333;
+}
+
+/* -----------------------------------------
+   UL Style
+----------------------------------------- */
+
+.technicals{
+  padding-top: 15px;
+  list-style-type: none;
+}
+
+.technicals label{
+  font-weight: bold;
+  font-size: 1em;
+  color: #dedede;
+}
+
+.technicals li{
+  margin-left: 10px;
+  color: #dedede;
+  font-weight: normal;
+  font-size: 0.9em;
+}
+
+.li-title{
+  color: #aaa;
+}
+
+/* -----------------------------------------
+   Footer Style
+----------------------------------------- */
+
+footer{
+  margin-top: 50px;
+  padding: 40px 30px 40px 30px;
+  background-color: #000;
+  font-size: 0.9em;
+  color: #dedede;
+}
+
+footer ul{
+  list-style-type: none;
+}
+
+footer h5{
+  margin-bottom: 15px;
+}
+
+#email-info{
+  margin-bottom: 5px;
+}
+
+abbr{
+  color: #999;
+}
+
+address{
+  margin-bottom: 5px;
+}
+
+#social-foot{
+  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-left: -5px;
+}
+
+footer h6{
+  margin: 10px 0px;
+  font-size: 1em;
+}
+
+.subscribe-newsletter form{
+  margin-top: 5px;
+  margin-left: -5px;
+}
+
+#mce-EMAIL{
+  height: 37px;
+  color: #dedede;
+  border: 1px solid #444;
+  background-color: #111;
+}
+
+#mce-EMAIL:hover{
+  border: 1px solid #999;
+}
